@@ -43,6 +43,11 @@
 	transition: all 0.3s ease-in-out;
 }
 
+.editor-container:hover .breadcrumb-item-flow,
+.part.sidebar.left.pane-composite-part:hover #project-title-flow {
+	color: #b16bd6;
+}
+
 .split-view-container > .split-view-view.visible:nth-child(2) {
 	padding-left: 8px !important;
 }
@@ -80,6 +85,8 @@
 .breadcrumb-item-flow {
 	font-weight: 600;
 	font-size: 16px;
+	transition: all 0.3s ease-in-out;
+	color: #888690;
 }
 
 .breadcrumbs-below-tabs {
@@ -100,18 +107,16 @@
 	background: #241b2f;
 	padding: 0 20px;
 	font-size: 13px;
+	color: #888690;
+	transition: all 0.3s ease-in-out;
 }
 
 .monaco-list[aria-label='Files Explorer']
-	> .monaco-scrollable-element[role='presentation'] {
+	> .monaco-scrollable-element[role='presentation'],
+.composite.viewlet {
 	width: 95%;
 }
 
 .composite.title > .title-label > h2 {
 	display: none;
-}
-
-#project-title-flow:hover,
-.breadcrumb-item-flow:hover {
-	color: #b16bd6;
 }
