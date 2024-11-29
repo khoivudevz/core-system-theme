@@ -1,0 +1,64 @@
+.monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.tabs-container
+	> .tab.sizing-fit.active {
+	box-shadow: inset 0 -5px 25px #fc28a825;
+	position: sticky;
+	background-image: url(https://i.ibb.co/dccLj9v/nyan-cat.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: -50% 0;
+	animation: catMoving 10s linear infinite;
+}
+
+@keyframes catMoving {
+	0% {
+		background-position: -50% 0;
+	}
+	100% {
+		background-position: 150% 0;
+	}
+}
+
+.editor-container,
+.part.sidebar.left.pane-composite-part,
+/* .composite.title.has-composite-bar, */
+/* .part.panel.basepanel.bottom.pane-composite-part, */
+.tabs-and-actions-container,
+.breadcrumbs-below-tabs,
+.part.activitybar.left {
+	border: 2px solid #fc28a825 !important;
+	transition: all 0.2s ease-in-out;
+	margin: 6px !important;
+	border-radius: 5px !important;
+}
+.editor-container:hover,
+.part.sidebar.left.pane-composite-part:hover,
+/* .composite.title.has-composite-bar:hover, */
+/* .part.panel.basepanel.bottom.pane-composite-part:hover, */
+.tabs-and-actions-container:hover,
+.breadcrumbs-below-tabs:hover,
+.part.activitybar.left:hover {
+	border: 2px solid #b16bd6 !important;
+	transition: all 0.2s ease-in-out;
+}
+
+.split-view-container > .split-view-view.visible:nth-child(2) {
+	padding-left: 8px !important;
+}
+
+.quick-input-widget {
+	width: 750px !important;
+	margin-left: 0 !important;
+	top: 50% !important;
+	left: 55% !important;
+	transform: translate(-50%, -50%) !important;
+}
+
+.quick-input-header {
+	font-size: 15px !important;
+	padding: 10px !important;
+}
