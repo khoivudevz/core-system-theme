@@ -151,30 +151,6 @@ function handleGetProjectTitle() {
 	return projectTitleText
 }
 
-function addProjectTitleContainer() {
-	if (projectTitleContainerEl) return
-	const projectTitleParentEl = document.querySelector(
-		'.part.sidebar.left.pane-composite-part'
-	)
-	if (!projectTitleParentEl) return
-
-	const newDiv = document.createElement('div')
-	newDiv.setAttribute('id', 'project-title-flow')
-	projectTitleParentEl.appendChild(newDiv)
-
-	projectTitleContainerEl = true
-}
-
-function addProjectTitle() {
-	const projectTitleFlowEl = document.querySelector('#project-title-flow')
-	if (!projectTitleFlowEl) return
-
-	const projectTitleText = handleGetProjectTitle()
-	if (projectTitleText === projectTitleValue) return
-	projectTitleValue = projectTitleText?.replace('Explorer: ', '')
-	projectTitleFlowEl.innerText = projectTitleText?.replace('Explorer: ', '')
-}
-
 // Chagne search input name in center window toolbox
 function ChangeSearchNameWindowToolbox() {
 	const searchLabelUnderLineEl = document.querySelector(
@@ -189,7 +165,12 @@ function ChangeSearchNameWindowToolbox() {
 	if (!searchLabelEl) return
 	const newSpan = document.createElement('span')
 	newSpan.setAttribute('id', 'search-label-underline')
-	newSpan.innerText = '______________'
+
+	const projectTitleText = handleGetProjectTitle()
+	if (projectTitleText === projectTitleValue) return
+	projectTitleValue = projectTitleText?.replace('Explorer: ', '')
+
+	newSpan.innerText = projectTitleValue
 	searchLabelEl.appendChild(newSpan)
 }
 
@@ -199,8 +180,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		addQuickInputBlur()
 		addBreadcrumbContainer()
 		addBreadcrumbItems()
-		addProjectTitleContainer()
-		addProjectTitle()
-		ChangeSearchNameWindowToolbox()
+		// ChangeSearchNameWindowToolbox()
 	}, 100)
 })

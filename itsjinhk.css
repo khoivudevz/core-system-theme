@@ -71,6 +71,20 @@
 .editor-container {
 	position: relative !important;
 	padding: 20px 0;
+	height: calc(100dvh - 165px) !important;
+	width: calc(100dvw - 455px) !important;
+}
+.part.activitybar.left {
+	height: calc(100dvh - 65px) !important;
+}
+.tabs-and-actions-container {
+	width: calc(100dvw - 455px) !important;
+}
+
+.editor-container > .editor-instance > div,
+.editor-container > .editor-instance > div > div {
+	height: 100% !important;
+	width: 100% !important;
 }
 
 #breadcrumb-flow {
@@ -97,7 +111,7 @@
 /* project title */
 .part.sidebar.left.pane-composite-part {
 	position: relative !important;
-	overflow: visible !important;
+	overflow: hidden !important;
 	height: 99% !important;
 }
 
@@ -167,7 +181,6 @@
 	> .actions-container
 	> .action-item.menu-entry,
 .action-item.monaco-dropdown-with-primary,
-.action-item.command-center-quick-pick > .search-label,
 .titlebar-right > .action-toolbar-container,
 .title.tabs.show-file-icons > .tabs-and-actions-container > .editor-actions {
 	display: none !important;
