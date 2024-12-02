@@ -3,6 +3,7 @@ let breadcrumbItems = []
 let breadcrumbFlowEl = false
 let projectTitleContainerEl = false
 let projectTitleValue = ''
+let toolsBarContainerEl = false
 
 // Quick Input Search Blur
 function addQuickInputBlurStyle(isOpen) {
@@ -170,8 +171,26 @@ function addProjectTitle() {
 
 	const projectTitleText = handleGetProjectTitle()
 	if (projectTitleText === projectTitleValue) return
-	projectTitleValue = projectTitleText
-	projectTitleFlowEl.innerText = projectTitleText
+	projectTitleValue = projectTitleText?.replace('Explorer: ', '')
+	projectTitleFlowEl.innerText = projectTitleText?.replace('Explorer: ', '')
+}
+
+// Chagne search input name in center window toolbox
+function ChangeSearchNameWindowToolbox() {
+	const searchLabelUnderLineEl = document.querySelector(
+		'#search-label-underline'
+	)
+	if (searchLabelUnderLineEl) return
+
+	const searchLabelEl = document.querySelector(
+		'.action-item.command-center-quick-pick'
+	)
+
+	if (!searchLabelEl) return
+	const newSpan = document.createElement('span')
+	newSpan.setAttribute('id', 'search-label-underline')
+	newSpan.innerText = '______________'
+	searchLabelEl.appendChild(newSpan)
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -182,5 +201,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		addBreadcrumbItems()
 		addProjectTitleContainer()
 		addProjectTitle()
+		ChangeSearchNameWindowToolbox()
 	}, 100)
 })

@@ -44,7 +44,8 @@
 }
 
 .editor-container:hover .breadcrumb-item-flow,
-.part.sidebar.left.pane-composite-part:hover #project-title-flow {
+.part.sidebar.left.pane-composite-part:hover #project-title-flow,
+.part.activitybar.left:hover #tools-bar-flow {
 	color: #b16bd6;
 }
 
@@ -97,6 +98,7 @@
 .part.sidebar.left.pane-composite-part {
 	position: relative !important;
 	overflow: visible !important;
+	height: 99% !important;
 }
 
 #project-title-flow {
@@ -119,4 +121,77 @@
 
 .composite.title > .title-label > h2 {
 	display: none;
+}
+
+/* Hover file */
+
+.monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.tabs-container
+	> .tab.sizing-fit:hover {
+	background-image: url(https://i.ibb.co/Jpwn6vY/bongo-cat.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 0px;
+	animation: bongoMoving 0.2s linear normal;
+}
+
+@keyframes bongoMoving {
+	0% {
+		background-position: 0% 20px;
+	}
+	100% {
+		background-position: 0% 0px;
+	}
+}
+
+.monaco-workbench
+	.part.editor
+	> .content
+	.editor-group-container
+	> .title
+	.tabs-container
+	> .tab.sizing-fit {
+	transition: all 0.3s ease-in-out;
+}
+
+/* Window toolbar */
+
+.window-title
+	> .command-center
+	> .monaco-toolbar
+	> .monaco-action-bar
+	> .actions-container
+	> .action-item.menu-entry,
+.action-item.monaco-dropdown-with-primary,
+.action-item.command-center-quick-pick > .search-label,
+.titlebar-right > .action-toolbar-container,
+.title.tabs.show-file-icons > .tabs-and-actions-container > .editor-actions {
+	display: none !important;
+}
+
+.monaco-workbench
+	.part.titlebar
+	> .titlebar-container
+	> .titlebar-center
+	> .window-title
+	> .command-center
+	.action-item.command-center-center {
+	align-items: stretch !important;
+	display: flex !important;
+	height: 22px !important;
+	margin: 0 6px !important;
+	max-width: 600px !important;
+	overflow: hidden !important;
+	width: fit-content !important;
+	background: transparent !important;
+	border: none !important;
+	font-size: 13px !important;
+}
+
+.action-item.icon > .action-label.codicon {
+	font-size: 15px !important;
 }
