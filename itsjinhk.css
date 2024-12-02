@@ -72,13 +72,13 @@
 	position: relative !important;
 	padding: 20px 0;
 	height: calc(100dvh - 165px) !important;
-	width: calc(100dvw - 455px) !important;
+	width: calc(100dvw - 600px) !important;
 }
 .part.activitybar.left {
 	height: calc(100dvh - 65px) !important;
 }
 .tabs-and-actions-container {
-	width: calc(100dvw - 455px) !important;
+	width: calc(100dvw - 600px) !important;
 }
 
 .editor-container > .editor-instance > div,
