@@ -162,16 +162,6 @@
 	}
 }
 
-.monaco-workbench
-	.part.editor
-	> .content
-	.editor-group-container
-	> .title
-	.tabs-container
-	> .tab.sizing-fit {
-	transition: all 0.3s ease-in-out;
-}
-
 /* Window toolbar */
 
 .window-title
