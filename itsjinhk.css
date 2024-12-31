@@ -25,24 +25,19 @@
 	}
 }
 
-
-
-
-
-
 .quick-input-widget {
 	width: 750px !important;
 	margin-left: 0 !important;
 	top: 50% !important;
 	left: 55% !important;
 	transform: translate(-50%, -50%) !important;
+	outline: 2px solid #c6a0f6 !important;
 }
 
 .quick-input-header {
 	font-size: 15px !important;
 	padding: 10px !important;
 }
-
 
 /* Hover file */
 
